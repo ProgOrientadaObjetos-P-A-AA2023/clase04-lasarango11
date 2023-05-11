@@ -64,5 +64,24 @@ public class FacturaTelefonica {
     public Usuario obtenerUsuario(){
         return usuario;
     }
- 
+  
+  @Override
+    public String toString() {
+        String cadena = String.format("Factura de Teléfono\n" +
+                "Nombre: %s\n" +
+                "Apellido: %s\n" +
+                "Identificación: %s\n" +
+                "Número de teléfono: %s\n" +
+                "Minutos mensuales: %.2f\n" +
+                "Valor por minuto: %.2f\n" +
+                "Valor a cancelar: %.2f\n",
+                usuario.obtenerNombre(),
+                usuario.obtenerApellido(),
+                usuario.obtenerIdentificacion(),
+                obtenerNumeroTelefono(),
+                obtenerMinutosMes(),
+                obtenerValorMinuto(),
+                obtenerValorFactura());
+        return cadena;
+    }
 }
